@@ -2,5 +2,6 @@
 
 ## Participantes
 
+- Rice
 - Rafael Cotrim
 - Helena Elias
