@@ -17,7 +17,6 @@
 ```
 git clone https://github.com/RafaelCotrim/IM.git
 ```
-
 - Verificar status do repositório
 ```
 git status
