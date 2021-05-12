@@ -8,7 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-
+    <color name="icon_gray">#505050</color>
     <color name="castanho">#4a4b4d</color>
     <color name="creme">#c4c3bf</color>
     <color name="laranja">#fc6011</color>

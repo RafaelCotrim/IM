@@ -10,4 +10,8 @@
     <string name="morada">Morada</string>
     <string name="btn_registar">REGISTAR</string>
     <string name="restaurantes">RESTAURANTES</string>
+    <string name="restaurantPromotionText">Promotions</string>
+    <string name="restaurantMenuButtonText">View Menu</string>
+    <string name="restaurantTimeText">Open Hours</string>
+    <string name="restaurantLocationText">Location</string>
 </resources>

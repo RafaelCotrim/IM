@@ -13,5 +13,9 @@
     <string name="morada">Address</string>
     <string name="btn_registar">SING UP</string>
     <string name="restaurantes">RESTAURANTS</string>
+    <string name="restaurantPromotionText">Promotions</string>
+    <string name="restaurantMenuButtonText">View Menu</string>
+    <string name="restaurantTimeText">Open Hours</string>
+    <string name="restaurantLocationText">Location</string>
 
 </resources>
