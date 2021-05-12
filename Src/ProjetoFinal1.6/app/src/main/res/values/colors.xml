@@ -14,5 +14,7 @@
     <color name="laranja">#fc6011</color>
     <color name="white2">#FFFFFFFF</color>
 
+    <color name="icon_gray">#505050</color>
+
 
 </resources>

@@ -34,6 +34,8 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
+        Intent myIntent = new Intent(this, ProfileActivity.class);
+        this.startActivity(myIntent);
 
 
 
