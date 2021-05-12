@@ -34,10 +34,6 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-        Intent myIntent = new Intent(this, ProfileActivity.class);
-        this.startActivity(myIntent);
-
-
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +41,8 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
             }
         });
+
+
     }
 
     private void checkCredentials() {
@@ -61,8 +59,16 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         else {
-            Toast.makeText(this, "Ir para o método de login", Toast.LENGTH_SHORT).show();
+            btnLogin.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                }
+            });
         }
+
+
+
 
     }
 

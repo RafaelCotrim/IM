@@ -32,7 +32,9 @@
         android:drawableLeft="@drawable/ic_security"
         android:drawablePadding="10dp"
         android:ems="10"
-        android:hint="Password"
+
+        android:hint="@string/password_hint"
+
         android:inputType="textPersonName|textPassword"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
@@ -44,7 +46,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/inputEmail"
+
+
+
+        />
 
     <EditText
         android:id="@+id/inputEmail"
@@ -73,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Esqueceu-se da password?"
+        android:hint="@string/esqueceu_pass"
         android:textColor="@color/white2"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -111,7 +117,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Não tens uma conta?"
+            android:hint="@string/nao_tens_conta"
             android:textColor="@color/white2"
             android:textSize="18sp" />
 
@@ -119,7 +125,7 @@
             android:id="@+id/textViewSingUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SignUp"
+            android:hint="@string/regista"
             android:textColor="@color/laranja"
             android:textSize="18sp"
             android:textStyle="bold" />
