@@ -1,7 +1,17 @@
 <resources>
-    <string name="app_name">MealEST</string>
-    <string name="restaurantPromotionText">Promotions</string>
-    <string name="restaurantMenuButtonText">View Menu</string>
-    <string name="restaurantTimeText">Open Hours</string>
-    <string name="restaurantLocationText">Location</string>
+    <string name="app_name">ProjetoFinal1</string>
+
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="password_hint" translatable="false">********</string>
+    <string name="esqueceu_pass">Forgot password?</string>
+    <string name="nao_tens_conta">Don\'t have an account?</string>
+    <string name="regista">Sing Up</string>
+    <string name="tituloRegisto">SingUp</string>
+    <string name="ja_tens_conta">Already have an account?</string>
+    <string name="telemovel">Mobile Phone</string>
+    <string name="morada">Address</string>
+    <string name="btn_registar">SING UP</string>
+    <string name="restaurantes">RESTAURANTS</string>
+
 </resources>

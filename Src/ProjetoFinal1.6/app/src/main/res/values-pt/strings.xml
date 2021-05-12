@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ProjetoFinal1</string>
+    <string name="esqueceu_pass">Esqueceu-se da password?</string>
+    <string name="nao_tens_conta">Não tem uma conta?</string>
+    <string name="regista">Resgiste-se</string>
+    <string name="tituloRegisto">Registo</string>
+    <string name="ja_tens_conta">Já tem uma conta?</string>
+    <string name="telemovel">Telemóvel</string>
+    <string name="morada">Morada</string>
+    <string name="btn_registar">REGISTAR</string>
+    <string name="restaurantes">RESTAURANTES</string>
+</resources>

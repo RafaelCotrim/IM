@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.meuTema">
-        <activity android:name=".RestaurantActivity"></activity>
+        <activity android:name=".RestaurantsActivity"></activity>
         <activity android:name=".ProfileActivity" />
         <activity android:name=".IntroductoryActivity">
             <intent-filter>
