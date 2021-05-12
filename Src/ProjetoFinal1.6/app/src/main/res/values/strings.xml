@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">ProjetoFinal1</string>
+    <string name="app_name">MealEST</string>
+    <string name="restaurantPromotionText">Promotions</string>
+    <string name="restaurantMenuButtonText">View Menu</string>
+    <string name="restaurantTimeText">Open Hours</string>
+    <string name="restaurantLocationText">Location</string>
 </resources>
