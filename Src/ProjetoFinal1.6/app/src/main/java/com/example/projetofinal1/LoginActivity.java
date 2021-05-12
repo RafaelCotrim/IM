@@ -33,7 +33,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-
+        Intent goTolanding = new Intent(this, MainActivity.class);
+        startActivity(goTolanding);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override

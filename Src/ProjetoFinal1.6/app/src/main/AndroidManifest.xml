@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.meuTema">
-        <activity android:name=".RestaurantsActivity"></activity>
+        <activity android:name=".MenuActivity"></activity>
         <activity android:name=".ProfileActivity" />
         <activity android:name=".IntroductoryActivity">
             <intent-filter>
@@ -21,6 +21,7 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".RestaurantActivity" />
     </application>
 
 </manifest>

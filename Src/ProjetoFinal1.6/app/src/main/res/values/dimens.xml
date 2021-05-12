@@ -1,3 +1,11 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="title_size">40sp</dimen>
+    <dimen name="subtitle_size">24sp</dimen>
+    <dimen name="subsubtitle_size">18sp</dimen>
+
+    <dimen name="image_header_size">150dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="restaurantBannerHeight">100dp</dimen>
+
 </resources>

@@ -21,7 +21,7 @@
             <ImageView
                 android:id="@+id/restaurantImage"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="@dimen/image_header_size"
                 android:layout_marginTop="8dp"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/appname"
@@ -34,7 +34,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
                 android:text="Nome Restaurante"
-                android:textSize="24sp" />
+                android:textSize="@dimen/title_size" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -93,6 +93,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="32dp"
+                    android:onClick="goToMenu"
                     android:text="@string/restaurantMenuButtonText"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

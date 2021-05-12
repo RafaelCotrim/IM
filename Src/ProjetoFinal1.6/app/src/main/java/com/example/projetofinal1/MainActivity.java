@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 //import android.widget.Toolbar ----- dava problema no setSuport datoolbar
@@ -24,7 +25,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
-    MenuItem menuItem;
 
 
     @Override
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
-        toolbar = findViewById(R.id.toolbar);
+        //toolbar = findViewById(R.id.toolbar);
 
         //ToolBar-----------------------
         setSupportActionBar(toolbar);
@@ -44,9 +44,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //Hide or show items--------------
         Menu menu = navigationView.getMenu();
-        menu.findItem(R.id.nav_beverages).setVisible(false);
-        menu.findItem(R.id.nav_desserts).setVisible(false);
-        menu.findItem(R.id.nav_rate).setVisible(false);
+        //menu.findItem(R.id.nav_beverages).setVisible(false);
+        //menu.findItem(R.id.nav_desserts).setVisible(false);
+        //menu.findItem(R.id.nav_rate).setVisible(false);
 
 
 
@@ -72,20 +72,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        /**switch (menuItem.getItemId()){
-            case R.id.nav_home:
-                break;
+        switch (item.getItemId()){
             case R.id.nav_profile:
-                Intent intent = new Intent(MainActivity.this,ProfileActivity.class);
-                startActivity(intent);
-                break;
-
-            case R.id.nav_share:
-                Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(this, ProfileActivity.class);
+                startActivity(i);
+            default:
                 break;
         }
 
-        drawerLayout.closeDrawer(GravityCompat.START);*/
+        //drawerLayout.closeDrawer(GravityCompat.START);
 
         //ESTÀ A DAR ERROOOOOOOOOO
 
