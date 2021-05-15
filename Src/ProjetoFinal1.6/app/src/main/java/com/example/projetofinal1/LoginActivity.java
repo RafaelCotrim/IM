@@ -10,12 +10,17 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.projetofinal1.models.User;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class LoginActivity extends AppCompatActivity {
 
 
     TextView btn;
     EditText inputEmail, inputPass;
     Button btnLogin;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        Intent goTolanding = new Intent(this, MainActivity.class);
+        Intent goTolanding = new Intent(this, RegisterActivity.class);
         startActivity(goTolanding);
 
         btn.setOnClickListener(new View.OnClickListener() {

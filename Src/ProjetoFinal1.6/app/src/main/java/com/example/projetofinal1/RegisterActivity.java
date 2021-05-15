@@ -4,11 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -17,13 +20,14 @@ public class RegisterActivity extends AppCompatActivity {
 
     private EditText inputUsername, inputPassword, inputEmail, inputConfirmPassword, inputAddress, inputMobile;
     Button btnRegister;
+    private FirebaseAuth mAuth;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
+        mAuth = FirebaseAuth.getInstance();
 
         btn=findViewById(R.id.alreadyHaveAccount);
         inputUsername=findViewById(R.id.inputPass);
@@ -34,12 +38,8 @@ public class RegisterActivity extends AppCompatActivity {
         inputMobile=findViewById(R.id.inputMobile);
 
         btnRegister=findViewById(R.id.btnRegister);
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                checkCredentials();
-            }
-        });
+        btnRegister.setOnClickListener(v -> checkCredentials());
+        btn.setOnClickListener(v -> startActivity(new Intent(RegisterActivity.this, LoginActivity.class)));
 
     }
 
@@ -55,7 +55,7 @@ public class RegisterActivity extends AppCompatActivity {
         if (username.isEmpty() || username.length()<7){
             showError(inputUsername,"Username inválido!");
         }
-        else if (email.isEmpty() || !email.contains("@")){
+        else if (email.isEmpty() || !email.contains("@")){ // TODO user pattern matching
             showError(inputEmail, "Email inválido");
         }
         if (username.isEmpty() || username.length()<7){
@@ -73,17 +73,16 @@ public class RegisterActivity extends AppCompatActivity {
         else if (confirmPassword.isEmpty() || !confirmPassword.equals(password)){
             showError(inputConfirmPassword,"A password não correspondente!");
         }
-        else {
-            Toast.makeText(this, "Ir para o método de registo", Toast.LENGTH_SHORT).show();
 
-        }
+        mAuth.createUserWithEmailAndPassword(address, password).addOnCompleteListener( RegisterActivity.this,task ->
+        {
+            if (task.isSuccessful()) {
+                Toast.makeText(this, "It does work!!!!!!!!!!!", Toast.LENGTH_SHORT).show();
+                Log.d("HIIIIIIIIIIIII", "It does work!!!!!!!!!!!");
 
-
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+            } else {
+                Toast.makeText(this, "It does not work!!!!!!!!!!!", Toast.LENGTH_SHORT).show();
+                Log.d("HIIIIIIIIIIIII", "It does not work!!!!!!!!!!!");
             }
         });
 
