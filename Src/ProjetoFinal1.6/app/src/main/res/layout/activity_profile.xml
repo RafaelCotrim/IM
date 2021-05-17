@@ -13,46 +13,22 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        app:tint="@color/icon_gray"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:srcCompat="@drawable/help_icon" />
+        app:layout_constraintTop_toBottomOf="@+id/favorites"
+        app:srcCompat="@drawable/help_icon"
+        app:tint="@color/icon_gray" />
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        app:tint="@color/icon_gray"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
-        app:srcCompat="@drawable/shield_icon" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        app:tint="@color/icon_gray"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:srcCompat="@drawable/promotions_icon" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="32dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="@+id/imageView5"
-        tools:text="Promotions" />
+        app:srcCompat="@drawable/shield_icon"
+        app:tint="@color/icon_gray" />
 
     <TextView
         android:id="@+id/textView6"
@@ -82,17 +58,6 @@
         tools:text="Help" />
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        app:tint="@color/icon_gray"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:srcCompat="@drawable/location_icon" />
-
-    <ImageView
         android:id="@+id/imageView7"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -113,59 +78,27 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.3" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4" />
-
-    <ImageView
-        android:id="@+id/rewards"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:tint="#DAC403"
-        app:layout_constraintBottom_toBottomOf="@+id/favorites"
-        app:layout_constraintEnd_toStartOf="@+id/wallet"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/favorites"
-        app:layout_constraintTop_toTopOf="@+id/favorites"
-        app:srcCompat="@drawable/rewards_icon" />
-
     <ImageView
         android:id="@+id/favorites"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:tint="#FF0000"
-        app:layout_constraintBottom_toTopOf="@+id/guideline5"
-        app:layout_constraintEnd_toStartOf="@+id/rewards"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline4"
-        app:srcCompat="@drawable/favorite_icon" />
-
-    <ImageView
-        android:id="@+id/wallet"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:tint="#4CAF50"
-        app:layout_constraintBottom_toBottomOf="@+id/rewards"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/rewards"
-        app:layout_constraintTop_toTopOf="@+id/rewards"
-        app:srcCompat="@drawable/wallet_icon" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@drawable/favorite_icon"
+        app:tint="@color/icon_gray" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        app:tint="@color/icon_gray"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline5"
-        app:srcCompat="@drawable/settings_icon" />
+        app:layout_constraintTop_toTopOf="@+id/guideline4"
+        app:srcCompat="@drawable/settings_icon"
+        app:tint="@color/icon_gray" />
 
     <TextView
         android:id="@+id/textView"
@@ -182,16 +115,15 @@
         tools:text="Settings" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textView3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="32dp"
-        android:text="Address"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3" />
+        android:fontFamily="sans-serif"
+        android:text="Favorites"
+        app:layout_constraintBottom_toBottomOf="@+id/favorites"
+        app:layout_constraintStart_toEndOf="@+id/favorites"
+        app:layout_constraintTop_toTopOf="@+id/favorites" />
 
     <TextView
         android:id="@+id/textView5"
@@ -212,15 +144,6 @@
         android:background="@color/laranja"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/imageView7"
-        tools:layout_editor_absoluteX="-16dp" />
-
-    <View
-        android:id="@+id/divider3"
-        android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:background="@color/laranja"
-        app:layout_constraintBottom_toTopOf="@+id/guideline5"
-        app:layout_constraintTop_toTopOf="@+id/guideline5"
         tools:layout_editor_absoluteX="-16dp" />
 
     <ImageView

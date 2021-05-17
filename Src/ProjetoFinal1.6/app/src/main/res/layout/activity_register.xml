@@ -183,6 +183,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:hint="@string/ja_tens_conta"
+        android:onClick="goToLogin"
         android:soundEffectsEnabled="true"
         android:textColor="@color/white2"
         android:textSize="18sp"

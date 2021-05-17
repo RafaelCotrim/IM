@@ -17,6 +17,7 @@ import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -25,28 +26,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
+    private FirebaseAuth mAuth;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        mAuth = FirebaseAuth.getInstance();
 
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
-        //toolbar = findViewById(R.id.toolbar);
-
-        //ToolBar-----------------------
         setSupportActionBar(toolbar);
 
-        //Navigation Drawer Menu ----------
-
-        //Hide or show items--------------
         Menu menu = navigationView.getMenu();
-        //menu.findItem(R.id.nav_beverages).setVisible(false);
-        //menu.findItem(R.id.nav_desserts).setVisible(false);
-        //menu.findItem(R.id.nav_rate).setVisible(false);
 
 
 
@@ -76,13 +69,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_profile:
                 Intent i = new Intent(this, ProfileActivity.class);
                 startActivity(i);
+                break;
+            case R.id.nav_logout:
+                mAuth.signOut();
+                startActivity(new Intent(this, LoginActivity.class));
+                break;
             default:
+                Toast.makeText(this, "To be implemented", Toast.LENGTH_LONG).show();
                 break;
         }
-
-        //drawerLayout.closeDrawer(GravityCompat.START);
-
-        //ESTÀ A DAR ERROOOOOOOOOO
 
        return true;
     }

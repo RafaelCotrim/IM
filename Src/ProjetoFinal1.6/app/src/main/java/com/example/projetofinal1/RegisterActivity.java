@@ -11,7 +11,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.projetofinal1.models.User;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -21,6 +23,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText inputUsername, inputPassword, inputEmail, inputConfirmPassword, inputAddress, inputMobile;
     Button btnRegister;
     private FirebaseAuth mAuth;
+    private FirebaseDatabase db;
 
 
     @Override
@@ -28,6 +31,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         mAuth = FirebaseAuth.getInstance();
+        db = FirebaseDatabase.getInstance();
 
         btn=findViewById(R.id.alreadyHaveAccount);
         inputUsername=findViewById(R.id.inputPass);
@@ -41,6 +45,11 @@ public class RegisterActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(v -> checkCredentials());
         btn.setOnClickListener(v -> startActivity(new Intent(RegisterActivity.this, LoginActivity.class)));
 
+    }
+
+    public  void goToLogin(View v){
+        Intent login = new Intent(this, LoginActivity.class);
+        startActivity(login);
     }
 
     private void checkCredentials() {
@@ -72,17 +81,23 @@ public class RegisterActivity extends AppCompatActivity {
         }
         else if (confirmPassword.isEmpty() || !confirmPassword.equals(password)){
             showError(inputConfirmPassword,"A password não correspondente!");
-        }
-
-        mAuth.createUserWithEmailAndPassword(address, password).addOnCompleteListener( RegisterActivity.this,task ->
+        } // TODO compare passwords
+        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener( RegisterActivity.this,task ->
         {
             if (task.isSuccessful()) {
-                Toast.makeText(this, "It does work!!!!!!!!!!!", Toast.LENGTH_SHORT).show();
-                Log.d("HIIIIIIIIIIIII", "It does work!!!!!!!!!!!");
+                User u = new User(username, mobile, address);
+                db.getReference("users").child(mAuth.getCurrentUser().getUid()).setValue(u).addOnCompleteListener(addTask ->
+                {
+                    // Change email mAuth.getCurrentUser().updateEmail();
+                    if(addTask.isSuccessful()) {
+                        startActivity(new Intent(this, MainActivity.class));
+                    } else {
+                        Toast.makeText(this, "Unable to store data", Toast.LENGTH_LONG).show();
+                    }
+                });
 
             } else {
-                Toast.makeText(this, "It does not work!!!!!!!!!!!", Toast.LENGTH_SHORT).show();
-                Log.d("HIIIIIIIIIIIII", "It does not work!!!!!!!!!!!");
+                Toast.makeText(this, "Unable to reach database", Toast.LENGTH_LONG).show();
             }
         });
 

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
+    android:onClick="login"
     tools:context=".LoginActivity">
 
     <TextView
@@ -49,7 +50,6 @@
         app:layout_constraintTop_toBottomOf="@+id/inputEmail"
 
 
-
         />
 
     <EditText
@@ -92,6 +92,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:background="@drawable/btn_bg"
+        android:onClick="login"
         android:shadowColor="@color/creme"
         android:text="LOGIN"
         android:textColor="@color/creme"
@@ -126,6 +127,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/regista"
+            android:onClick="signUp"
             android:textColor="@color/laranja"
             android:textSize="18sp"
             android:textStyle="bold" />
