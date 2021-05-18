@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.projetofinal1.models.User;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -24,7 +25,6 @@ public class RegisterActivity extends AppCompatActivity {
     Button btnRegister;
     private FirebaseAuth mAuth;
     private FirebaseDatabase db;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
