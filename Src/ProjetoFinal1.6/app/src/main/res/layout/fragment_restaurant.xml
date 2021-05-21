@@ -3,27 +3,38 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".RestaurantFragment">
 
+    <TextView
+        android:id="@+id/restaurant_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:text="TextView"
+        android:textSize="@dimen/subsubtitle_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/restaurant_icon" />
+
     <ImageView
-        android:id="@+id/icon1"
-        android:layout_width="match_parent"
+        android:id="@+id/restaurant_icon"
+        android:layout_width="0dp"
         android:layout_height="@dimen/restaurant_image_height"
-        android:scaleType="centerCrop"
-        android:src="@drawable/americano"
+        android:clickable="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/food_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/name"
-        android:layout_width="0dp"
+        android:id="@+id/res_id"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:textSize="@dimen/subsubtitle_size"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/icon1" />
+        app:layout_constraintTop_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

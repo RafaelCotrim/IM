@@ -23,7 +23,7 @@ public class IntroductoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_introductory);
 
 
-        appname = findViewById(R.id.name);
+        appname = findViewById(R.id.restaurant_name);
         lottieAnimationView = findViewById(R.id.lottie);
 
         appname.animate().translationY(500).setDuration(2000).setStartDelay(1000);

@@ -1,5 +1,6 @@
 package com.example.projetofinal1;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,43 +8,51 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link RestaurantFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class RestaurantFragment extends Fragment {
 
-    private static final String RES_ID = "restaurantId";
 
-    private String restaurantId;
+    private TextView resName;
+    private TextView resId;
+    private ImageView resImage;
 
-    public RestaurantFragment() {
 
-    }
+    public RestaurantFragment()
+    {
+        resId = getView().findViewById(R.id.res_id);
+        resName = getView().findViewById(R.id.restaurant_name);
+        resImage = getView().findViewById(R.id.restaurantImage);
 
-    // TODO: Rename and change types and number of parameters
-    public static RestaurantFragment newInstance(String restaurantId) {
-        RestaurantFragment fragment = new RestaurantFragment();
-        Bundle args = new Bundle();
-        args.putString(RES_ID, restaurantId);
-        fragment.setArguments(args);
-        return fragment;
+        resName.setOnClickListener(x -> goToRestaurant());
+        resImage.setOnClickListener(x -> goToRestaurant());
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            restaurantId = getArguments().getString(RES_ID);
-        }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
+
+
+
         return inflater.inflate(R.layout.fragment_restaurant, container, false);
+    }
+
+
+    public void goToRestaurant(){
+        Intent i = new Intent(getActivity(), RestaurantActivity.class);
+        i.putExtra(RestaurantActivity.RES_ID, resId.getText().toString());
+        startActivity(i);
     }
 }

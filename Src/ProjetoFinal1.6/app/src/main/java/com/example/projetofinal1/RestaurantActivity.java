@@ -8,6 +8,9 @@ import android.view.View;
 
 public class RestaurantActivity extends AppCompatActivity {
 
+    public static final String RES_ID = "res_id";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
