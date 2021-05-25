@@ -22,6 +22,7 @@
         <item name="colorPrimary">@color/laranja</item>
         <item name="colorAccent">@color/castanho</item>
         <item name="android:textColorPrimary">@color/castanho</item>
+        <item name="android:statusBarColor" >@color/laranja</item>
 
     </style>
 

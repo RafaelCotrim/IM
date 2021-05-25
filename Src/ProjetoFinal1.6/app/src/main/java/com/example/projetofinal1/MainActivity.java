@@ -71,6 +71,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 mAuth.signOut();
                 startActivity(new Intent(this, LoginActivity.class));
                 break;
+            case R.id.nav_cart:
+                startActivity(new Intent(this, CartActivity.class));
+                break;
             default:
                 Toast.makeText(this, "To be implemented", Toast.LENGTH_LONG).show();
                 break;

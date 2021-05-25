@@ -8,6 +8,7 @@ public class Food {
     private double price;
     private String description;
     private String imagePath;
+    private String resId;
 
     @Exclude
     public String getId() {
@@ -48,5 +49,13 @@ public class Food {
 
     public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
+    }
+
+    public String getResId() {
+        return resId;
+    }
+
+    public void setResId(String resId) {
+        this.resId = resId;
     }
 }
