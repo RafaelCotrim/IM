@@ -3,11 +3,13 @@
     <dimen name="title_size">40sp</dimen>
     <dimen name="subtitle_size">24sp</dimen>
     <dimen name="subsubtitle_size">18sp</dimen>
+    <dimen name="text_size">14sp</dimen>
 
     <dimen name="image_header_size">150dp</dimen>
     <dimen name="text_margin">16dp</dimen>
     <dimen name="restaurantBannerHeight">100dp</dimen>
-
     <dimen name="restaurant_image_height">180dp</dimen>
+
+    <dimen name="food_image_heigh">180dp</dimen>
 
 </resources>
