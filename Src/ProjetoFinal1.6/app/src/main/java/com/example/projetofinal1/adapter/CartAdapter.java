@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -50,7 +51,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
         private final TextView idEntry;
         private final Button removeFromCartButton;
 
-        public ViewHolder(CartAdapter ca, View v, FirebaseFirestore db) {
+        public ViewHolder(CartAdapter ca, View v, FirebaseFirestore db, Context context) {
             super(v);
 
             idView = v.findViewById(R.id.foodId);
@@ -70,6 +71,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
                             .addOnSuccessListener(task -> {
                                 ca.updateData();
                             });
+                    Toast.makeText(context, "Item removed from cart!", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -105,7 +107,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
         View v = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.fragment_cart_entry_fragmnet, viewGroup, false);
 
-        return new CartAdapter.ViewHolder(this, v, db);
+        return new CartAdapter.ViewHolder(this, v, db, context);
     }
 
     @Override

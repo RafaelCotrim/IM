@@ -47,6 +47,8 @@
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:text="-"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/foodName"
         app:layout_constraintEnd_toEndOf="parent" />
 
