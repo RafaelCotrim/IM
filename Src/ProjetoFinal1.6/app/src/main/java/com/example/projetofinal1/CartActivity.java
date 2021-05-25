@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import com.example.projetofinal1.adapter.CartAdapter;
 import com.example.projetofinal1.adapter.FoodAdapter;
@@ -26,6 +28,9 @@ public class CartActivity extends AppCompatActivity {
     protected RecyclerView.LayoutManager mLayoutManager;
     protected CartAdapter mAdapter;
 
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,5 +45,10 @@ public class CartActivity extends AppCompatActivity {
         // Set CustomAdapter as the adapter for RecyclerView.
         mRecyclerView.setAdapter(mAdapter);
         mAdapter.updateData();
+    }
+
+    public void finish(View v){
+        if(mAdapter.getItemCount() > 0)
+            Toast.makeText(this, "Your delivery is on its way!", Toast.LENGTH_SHORT).show();
     }
 }
