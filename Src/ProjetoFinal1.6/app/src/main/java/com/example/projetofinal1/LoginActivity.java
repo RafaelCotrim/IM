@@ -67,10 +67,10 @@ public class LoginActivity extends AppCompatActivity {
 
 
         if (email.isEmpty() || !email.contains("@")){
-            showError(inputEmail, "Email inválido");
+            showError(inputEmail, "Wrong email!");
         }
         else if (password.isEmpty() || password.length()<7){
-            showError(inputPass,"A password tem de ter pelo menos 7 careteres!");
+            showError(inputPass,"The password must have at least 7 characters!");
         }
         else {
 
@@ -80,7 +80,7 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
 
                 } else {
-                    Toast.makeText(this, "You idiot!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Login failed!", Toast.LENGTH_SHORT).show();
                     // Log.d("HIIIIIIIIIIIII", "It does not work!!!!!!!!!!!");
                 }
             });

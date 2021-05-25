@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -49,7 +50,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder>{
         private final TextView priceView;
         private final Button addToCartButton;
 
-        public ViewHolder(View v, FirebaseFirestore db, FirebaseAuth mAuth) {
+        public ViewHolder(View v, FirebaseFirestore db, FirebaseAuth mAuth, Context context) {
             super(v);
 
             idView = v.findViewById(R.id.foodId);
@@ -65,6 +66,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder>{
                 public void onClick(View v) {
                     Log.d(TAG, "Element " + getAbsoluteAdapterPosition() + " clicked.");
                     db.collection("cart").document().set(new CartEntry(mAuth.getCurrentUser().getUid(), idView.getText().toString()));
+                    Toast.makeText(context, "Item added to cart!", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -96,7 +98,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder>{
         View v = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.fragment_food, viewGroup, false);
 
-        return new FoodAdapter.ViewHolder(v, db, mAuth);
+        return new FoodAdapter.ViewHolder(v, db, mAuth, context);
     }
 
     @Override

@@ -62,26 +62,26 @@ public class RegisterActivity extends AppCompatActivity {
 
 
         if (username.isEmpty() || username.length()<7){
-            showError(inputUsername,"Username inválido!");
+            showError(inputUsername,"Invalid Username!");
         }
         else if (email.isEmpty() || !email.contains("@")){ // TODO user pattern matching
-            showError(inputEmail, "Email inválido");
+            showError(inputEmail, "Invalid Email");
         }
         if (username.isEmpty() || username.length()<7){
-            showError(inputUsername,"Username inválido!");
+            showError(inputUsername,"Invalid Username");
         }
         if (address.isEmpty()){
-            showError(inputAddress,"Morada inválida!");
+            showError(inputAddress,"Invalid address");
         }
         if (mobile.isEmpty() || mobile.length()<9){
-            showError(inputMobile,"Número inválido!");
+            showError(inputMobile,"Invalid phone number");
         }
         else if (password.isEmpty() || password.length()<7){
-            showError(inputPassword,"A password tem de ter pelo menos 7 careteres!");
+            showError(inputPassword,"The password must have at least 7 characters");
         }
         else if (confirmPassword.isEmpty() || !confirmPassword.equals(password)){
-            showError(inputConfirmPassword,"A password não correspondente!");
-        } // TODO compare passwords
+            showError(inputConfirmPassword,"The password doesn't match");
+        }
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener( RegisterActivity.this,task ->
         {
             if (task.isSuccessful()) {
